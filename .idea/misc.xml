@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Azro_Sk/AndroidStudioProjects/TiersApp/app/src/main/res/drawable/add_icon.xml" value="0.1405" />
+        <entry key="..\:/Users/Azro_Sk/AndroidStudioProjects/TiersApp/app/src/main/res/drawable/admin_account.xml" value="0.131" />
+        <entry key="..\:/Users/Azro_Sk/AndroidStudioProjects/TiersApp/app/src/main/res/drawable/logout_icon.xml" value="0.1405" />
+        <entry key="..\:/Users/Azro_Sk/AndroidStudioProjects/TiersApp/app/src/main/res/drawable/master_icon.xml" value="0.131" />
+        <entry key="..\:/Users/Azro_Sk/AndroidStudioProjects/TiersApp/app/src/main/res/layout/activity_clients.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Azro_Sk/AndroidStudioProjects/TiersApp/app/src/main/res/layout/activity_login.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Azro_Sk/AndroidStudioProjects/TiersApp/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/Azro_Sk/AndroidStudioProjects/TiersApp/app/src/main/res/layout/activity_signup.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Azro_Sk/AndroidStudioProjects/TiersApp/app/src/main/res/layout/cart_view_holder.xml" value="0.23125" />
+        <entry key="..\:/Users/Azro_Sk/AndroidStudioProjects/TiersApp/app/src/main/res/layout/client_service_view_viewholder.xml" value="0.23125" />
+        <entry key="..\:/Users/Azro_Sk/AndroidStudioProjects/TiersApp/app/src/main/res/layout/fragment_add_master_dialog.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Azro_Sk/AndroidStudioProjects/TiersApp/app/src/main/res/layout/fragment_add_service.xml" value="0.264" />
+        <entry key="..\:/Users/Azro_Sk/AndroidStudioProjects/TiersApp/app/src/main/res/layout/fragment_admin_account.xml" value="0.264" />
+        <entry key="..\:/Users/Azro_Sk/AndroidStudioProjects/TiersApp/app/src/main/res/layout/fragment_admin_location.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Azro_Sk/AndroidStudioProjects/TiersApp/app/src/main/res/layout/fragment_cl_order_service.xml" value="0.264" />
+        <entry key="..\:/Users/Azro_Sk/AndroidStudioProjects/TiersApp/app/src/main/res/layout/fragment_clients_home.xml" value="0.11296859169199595" />
+        <entry key="..\:/Users/Azro_Sk/AndroidStudioProjects/TiersApp/app/src/main/res/layout/fragment_clients_location.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Azro_Sk/AndroidStudioProjects/TiersApp/app/src/main/res/layout/fragment_clients_my_orders.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Azro_Sk/AndroidStudioProjects/TiersApp/app/src/main/res/layout/fragment_edit_master.xml" value="0.21822916666666667" />
+        <entry key="..\:/Users/Azro_Sk/AndroidStudioProjects/TiersApp/app/src/main/res/layout/fragment_edit_service.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Azro_Sk/AndroidStudioProjects/TiersApp/app/src/main/res/layout/fragment_home.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Azro_Sk/AndroidStudioProjects/TiersApp/app/src/main/res/layout/fragment_order_details.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Azro_Sk/AndroidStudioProjects/TiersApp/app/src/main/res/layout/fragment_orders.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Azro_Sk/AndroidStudioProjects/TiersApp/app/src/main/res/layout/fragment_orders_history.xml" value="0.21822916666666667" />
+        <entry key="..\:/Users/Azro_Sk/AndroidStudioProjects/TiersApp/app/src/main/res/layout/fragment_service_details.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Azro_Sk/AndroidStudioProjects/TiersApp/app/src/main/res/layout/master_view_holder.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Azro_Sk/AndroidStudioProjects/TiersApp/app/src/main/res/layout/order_viewholder.xml" value="0.23125" />
+        <entry key="..\:/Users/Azro_Sk/AndroidStudioProjects/TiersApp/app/src/main/res/menu/admin_main_menu.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Azro_Sk/AndroidStudioProjects/TiersApp/app/src/main/res/menu/admin_prof_menu.xml" value="0.21822916666666667" />
+        <entry key="..\:/Users/Azro_Sk/AndroidStudioProjects/TiersApp/app/src/main/res/menu/bottom_nav_bar_clients.xml" value="0.23125" />
+        <entry key="..\:/Users/Azro_Sk/AndroidStudioProjects/TiersApp/app/src/main/res/menu/bottom_nav_bar_items.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Azro_Sk/AndroidStudioProjects/TiersApp/app/src/main/res/menu/logout_menu.xml" value="0.2175925925925926" />
+        <entry key="..\:/Users/Azro_Sk/AndroidStudioProjects/TiersApp/app/src/main/res/menu/masters_menu.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Azro_Sk/AndroidStudioProjects/TiersApp/app/src/main/res/menu/menu.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Azro_Sk/AndroidStudioProjects/TiersApp/app/src/main/res/menu/orders_menu.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Azro_Sk/Desktop/Kurcash/app/src/main/res/layout/activity_clients.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Azro_Sk/Desktop/Kurcash/app/src/main/res/layout/activity_signup.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Azro_Sk/Desktop/Kurcash/app/src/main/res/layout/cart_view_holder.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Azro_Sk/Desktop/Kurcash/app/src/main/res/layout/client_service_view_viewholder.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Azro_Sk/Desktop/Kurcash/app/src/main/res/layout/fragment_add_master_dialog.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Azro_Sk/Desktop/Kurcash/app/src/main/res/layout/fragment_add_service.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Azro_Sk/Desktop/Kurcash/app/src/main/res/layout/fragment_admin_location.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Azro_Sk/Desktop/Kurcash/app/src/main/res/layout/fragment_cl_order_service.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Azro_Sk/Desktop/Kurcash/app/src/main/res/layout/fragment_clients_home.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Azro_Sk/Desktop/Kurcash/app/src/main/res/layout/fragment_clients_location.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Azro_Sk/Desktop/Kurcash/app/src/main/res/layout/fragment_clients_my_orders.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Azro_Sk/Desktop/Kurcash/app/src/main/res/layout/fragment_edit_master.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Azro_Sk/Desktop/Kurcash/app/src/main/res/layout/fragment_edit_service.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Azro_Sk/Desktop/Kurcash/app/src/main/res/layout/fragment_home.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Azro_Sk/Desktop/Kurcash/app/src/main/res/layout/fragment_language_dialog.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Azro_Sk/Desktop/Kurcash/app/src/main/res/layout/fragment_order_details.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Azro_Sk/Desktop/Kurcash/app/src/main/res/layout/fragment_orders.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Azro_Sk/Desktop/Kurcash/app/src/main/res/layout/fragment_orders_history.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Azro_Sk/Desktop/Kurcash/app/src/main/res/layout/fragment_service_details.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Azro_Sk/Desktop/Kurcash/app/src/main/res/layout/master_view_holder.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Azro_Sk/Desktop/Kurcash/app/src/main/res/layout/order_viewholder.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Azro_Sk/Desktop/Kurcash/app/src/main/res/menu/admin_main_menu.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Azro_Sk/Desktop/Kurcash/app/src/main/res/menu/bottom_nav_bar_clients.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Azro_Sk/Desktop/Kurcash/app/src/main/res/menu/bottom_nav_bar_items.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Azro_Sk/Desktop/Kurcash/app/src/main/res/menu/logout_menu.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Azro_Sk/Desktop/Kurcash/app/src/main/res/menu/menu.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Azro_Sk/Desktop/Kurcash/app/src/main/res/menu/orders_menu.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Azro_Sk/Desktop/My Folders/Kurcash/app/src/main/res/layout/activity_login.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Azro_Sk/Desktop/My Folders/Kurcash/app/src/main/res/layout/fragment_login.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Azro_Sk/Desktop/My Folders/Kurcash/app/src/main/res/menu/login_menu.xml" value="0.23125" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

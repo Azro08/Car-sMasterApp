@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_clients"
+    app:startDestination="@id/navClientsHome">
+
+    <fragment
+        android:id="@+id/navClientsHome"
+        android:name="com.azrosk.tiersapp.ui.clients_ui.fragments.home.ClientsHomeFragment"
+        tools:layout="@layout/fragment_clients_home">
+        <action
+            android:id="@+id/nav_details_cl"
+            app:destination="@id/serviceDetailsFragment" />
+        <action
+            android:id="@+id/nav_cl_home_lang"
+            app:destination="@id/languageDialogFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/navClientsOrders"
+        android:name="com.azrosk.tiersapp.ui.clients_ui.fragments.myOrders.ClientsMyOrdersFragment"
+        tools:layout="@layout/fragment_clients_my_orders">
+        <action
+            android:id="@+id/nav_cl_order_details"
+            app:destination="@id/orderDetailsFragment2" />
+        <action
+            android:id="@+id/nav_cart_order"
+            app:destination="@id/clOrderServiceFragment" />
+        <action
+            android:id="@+id/nav_cart_history"
+            app:destination="@id/ordersHistoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/serviceDetailsFragment"
+        android:name="com.azrosk.tiersapp.ui.shared.serviceDetails.ServiceDetailsFragment"
+        tools:layout="@layout/fragment_service_details">
+        <action
+            android:id="@+id/nav_det_home"
+            app:destination="@id/navClientsHome" />
+    </fragment>
+    <fragment
+        android:id="@+id/clOrderServiceFragment"
+        android:name="com.azrosk.tiersapp.ui.clients_ui.fragments.order.ClOrderServiceFragment"
+        tools:layout="@layout/fragment_cl_order_service">
+        <action
+            android:id="@+id/nav_order_client_orders"
+            app:destination="@id/navClientsOrders" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderDetailsFragment2"
+        android:name="com.azrosk.tiersapp.ui.shared.orderDetails.OrderDetailsFragment"
+        tools:layout="@layout/fragment_order_details" />
+    <fragment
+        android:id="@+id/ordersHistoryFragment"
+        android:name="com.azrosk.tiersapp.ui.clients_ui.fragments.ordersHistory.OrdersHistoryFragment"
+        tools:layout="@layout/fragment_orders_history">
+        <action
+            android:id="@+id/nav_his_det"
+            app:destination="@id/orderDetailsFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/navClientsLocation"
+        android:name="com.azrosk.tiersapp.ui.clients_ui.fragments.location.ClientsLocationFragment"
+        tools:layout="@layout/fragment_clients_location" />
+    <dialog
+        android:id="@+id/languageDialogFragment"
+        android:name="com.azrosk.tiersapp.ui.shared.lang.LanguageDialogFragment"
+        tools:layout="@layout/fragment_language_dialog" />
+</navigation>

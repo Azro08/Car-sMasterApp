@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_nav"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.azrosk.tiersapp.ui.shared.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/nav_login_lang"
+            app:destination="@id/languageDialogFragment3" />
+    </fragment>
+    <dialog
+        android:id="@+id/languageDialogFragment3"
+        android:name="com.azrosk.tiersapp.ui.shared.lang.LanguageDialogFragment"
+        android:label="fragment_language_dialog"
+        tools:layout="@layout/fragment_language_dialog" />
+</navigation>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TiersApp.iml" filepath="$PROJECT_DIR$/.idea/modules/TiersApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/TiersApp.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/TiersApp.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/TiersApp.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/TiersApp.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/TiersApp.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/TiersApp.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/TiersApp.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/TiersApp.app.unitTest.iml" />
+    </modules>
+  </component>
+</project>

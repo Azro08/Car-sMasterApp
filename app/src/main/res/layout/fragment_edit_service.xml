@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.admins_ui.fragments.editService.FragmentEditService">
+
+    <TextView
+        android:id="@+id/editErr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/error_n_something_went_wrong"
+        android:textAlignment="center"
+        android:textSize="26sp"
+        android:layout_gravity="center"
+        android:visibility="gone"/>
+
+
+    <ScrollView
+        android:id="@+id/editContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="55dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/edit_service"
+                android:textColor="@color/blue"
+                android:textSize="24sp"
+                android:layout_gravity="center"
+                android:layout_marginTop="24dp"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="64dp">
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/service_title"
+                    android:textSize="16sp"/>
+
+                <EditText
+                    android:id="@+id/etEditServiceTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:ems="10"
+                    android:hint="@string/title"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp"/>
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/price" />
+
+                <EditText
+                    android:id="@+id/etEditServicePrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:ems="10"
+                    android:hint="@string/price"
+                    android:inputType="numberDecimal"
+                    android:minHeight="48dp"/>
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/etEditServiceDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:hint="@string/description"/>
+
+            <EditText
+                android:id="@+id/etEditRecomMastersService"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:hint="@string/recommended_masters"
+                android:text=""/>
+
+            <Button
+                android:id="@+id/btnEditService"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="@string/save"
+                android:textColor="@color/white"
+                android:background="@drawable/btn_bgnd"
+                android:layout_marginTop="190dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"/>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</FrameLayout>
