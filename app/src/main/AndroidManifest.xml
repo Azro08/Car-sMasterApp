@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.azrosk.tiersapp">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
@@ -16,7 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TiersApp"
         tools:targetApi="31">
-
+        <activity
+            android:name=".ui.masters_ui.MastersActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.clients_ui.actitvity.ClientsActivity"
             android:exported="false" />

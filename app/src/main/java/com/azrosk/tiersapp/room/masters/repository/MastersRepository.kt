@@ -16,4 +16,7 @@ class MastersRepository  (private val mastersDao: MastersDao) {
         mastersDao.updateMaster(master)
     }
 
+    suspend fun getMaster(email : String): Master? {
+        return mastersDao.getMasterById(email)
+    }
 }

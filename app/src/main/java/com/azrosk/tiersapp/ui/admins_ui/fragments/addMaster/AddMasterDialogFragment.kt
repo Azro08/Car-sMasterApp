@@ -4,6 +4,7 @@ import android.app.AlertDialog
 import android.app.Dialog
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModelProvider
@@ -21,49 +22,36 @@ class AddMasterDialogFragment : DialogFragment() {
         val builder = AlertDialog.Builder(this.activity)
         builder.run { setView(binding.root) }
         mastersVm = ViewModelProvider(requireActivity())[AddMasterViewModel::class.java]
+
         binding.btnAddMaster.setOnClickListener {
-            when {
-                (TextUtils.isEmpty(binding.etAddMasterName.text.toString().trim { it <= ' ' })) -> {
-                    binding.etAddMasterName.error = "fill out"
-                }
-                (TextUtils.isEmpty(binding.etAddMasterSurName.text.toString().trim { it <= ' ' })) -> {
-                    binding.etAddMasterSurName.error = "fill out"
-                }
-                else -> {
-                    val name =
-                        binding.etAddMasterName.text.toString() + " " + binding.etAddMasterSurName.text.toString()
-                    val masterExists = masterExists(name)
-                    if (masterExists == 1) Toast.makeText(
-                        requireContext(),
-                        "Master already exists!",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                    else {
-                        mastersVm.addMaster(Master(name = name))
+            val name = binding.etAddMasterName.text.toString().trim()
+            val surName = binding.etAddMasterSurName.text.toString().trim()
+            val email = binding.etAddMasterEmail.text.toString().trim()
+            val password = binding.etAddMasterPassword.text.toString().trim()
+
+            if (name.isEmpty()) {
+                binding.etAddMasterName.error = "Name cannot be empty"
+            } else if (surName.isEmpty()) {
+                binding.etAddMasterSurName.error = "Surname cannot be empty"
+            } else if (email.isEmpty()) {
+                binding.etAddMasterEmail.error = "Email cannot be empty"
+            } else if (password.isEmpty()) {
+                binding.etAddMasterPassword.error = "Password cannot be empty"
+            } else {
+                val fullName = "$name $surName"
+                mastersVm.readAllMasters.observe(this) { mastersList ->
+                    val exists = mastersList.any { it.name == fullName }
+                    if (exists) {
+                        Toast.makeText(requireContext(), "Master already exists!", Toast.LENGTH_SHORT).show()
+                    } else {
+                        val master = Master(name = fullName, email = email, password = password)
+                        mastersVm.addMaster(master)
                         dismiss()
                     }
                 }
             }
         }
-
         return builder.create()
     }
 
-    private fun masterExists(name: String): Int {
-        var masterExists = 0
-        val mastersList = getMastersList()
-        masterExists = if (mastersList.contains(name)) 1
-        else 0
-        return masterExists
-    }
-
-    private fun getMastersList(): List<String> {
-        val mastersList = mutableListOf<String>()
-        mastersVm.readAllMasters.observe(requireActivity()){
-            for (i in it){
-                mastersList.add(i.name)
-            }
-        }
-        return mastersList
-    }
 }

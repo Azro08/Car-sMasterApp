@@ -13,6 +13,7 @@ import com.azrosk.tiersapp.R
 import com.azrosk.tiersapp.databinding.ActivityMainBinding
 import com.azrosk.tiersapp.sharedpref.MySharedPreferences
 import com.azrosk.tiersapp.ui.clients_ui.actitvity.ClientsActivity
+import com.azrosk.tiersapp.ui.masters_ui.MastersActivity
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
@@ -37,6 +38,11 @@ class MainActivity : AppCompatActivity() {
         val userType = sp.getLoggedInBy()
         if (userType == Constants.CLIENT){
             val intent = Intent(this, ClientsActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+        else if (userType == Constants.MASTER){
+            val intent = Intent(this, MastersActivity::class.java)
             startActivity(intent)
             finish()
         }

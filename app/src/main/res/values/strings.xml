@@ -74,4 +74,5 @@
     <string name="language_already_picked">language already picked</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="works">Works</string>
 </resources>

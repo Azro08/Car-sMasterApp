@@ -13,6 +13,12 @@ data class Master (
     val name : String = "",
 
     @ColumnInfo
+    val email : String = "",
+
+    @ColumnInfo
+    val password : String = "",
+
+    @ColumnInfo
     @TypeConverters(ArrayListConverter::class)
     val busy_times : ArrayList<String> = arrayListOf(),
 

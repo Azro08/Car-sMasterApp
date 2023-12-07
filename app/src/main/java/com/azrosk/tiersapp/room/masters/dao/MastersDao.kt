@@ -19,4 +19,7 @@ interface MastersDao {
     @Query("SELECT * FROM masters_table")
     fun getAllMasters() : LiveData<List<Master>>
 
+    @Query("SELECT * FROM masters_table WHERE email = :email")
+    suspend fun getMasterById(email: String): Master?
+
 }

@@ -4,6 +4,7 @@ import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
 import android.widget.ArrayAdapter
@@ -17,9 +18,11 @@ import com.azrosk.tiersapp.databinding.FragmentLoginBinding
 import com.azrosk.tiersapp.helper.Constants
 import com.azrosk.tiersapp.model.Admin
 import com.azrosk.tiersapp.model.Client
+import com.azrosk.tiersapp.model.Master
 import com.azrosk.tiersapp.sharedpref.MySharedPreferences
 import com.azrosk.tiersapp.ui.admins_ui.activities.MainActivity
 import com.azrosk.tiersapp.ui.clients_ui.actitvity.ClientsActivity
+import com.azrosk.tiersapp.ui.masters_ui.MastersActivity
 import com.azrosk.tiersapp.ui.shared.login.admin_viewmodel.AdminViewModel
 import com.azrosk.tiersapp.ui.shared.login.clients_viewmodel.ClientsViewModel
 import com.azrosk.tiersapp.ui.shared.signup.SignupActivity
@@ -29,7 +32,7 @@ class LoginFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var viewModel : AdminViewModel
     private lateinit var clientViewModel : ClientsViewModel
-    private val spinnerOptions = arrayOf("Admin", "User")
+    private val spinnerOptions = arrayOf("Admin", "User", "Master")
     private val admin = Admin(email = "admin@admin.com", password = "admin")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -116,13 +119,35 @@ class LoginFragment : Fragment() {
                     clientViewModel.readAllClients.observe(requireActivity()) {
                         loginAsClient(it, email, password)
                     }
-                } else{
+                } else if (binding.spinnerLoginAs.selectedItem.toString() == "Master"){
+                    viewModel.readAllMasters.observe(requireActivity()){
+                        loginAsMaster(it, email, password)
+                    }
+                }
+                else{
                     Toast.makeText(requireContext(), "something went wrong! ", Toast.LENGTH_SHORT).show()
                 }
             }
 
         }
 
+    }
+
+    private fun loginAsMaster(masterList: List<Master>?, email: String, password: String) {
+        Log.d("MasterDetails", masterList.toString())
+        for (master in masterList!!) {
+            Log.d("MasterDetails", master.toString())
+            if (master.email == email && master.password == password) {
+                val sp = MySharedPreferences(requireContext())
+                sp.saveEmail(email)
+                sp.saveUserType(Constants.MASTER)
+
+                val intent = Intent(requireContext(), MastersActivity::class.java)
+                startActivity(intent)
+                requireActivity().finish()
+            }
+        }
+        Toast.makeText(requireContext(), "master doesn't exist or wrong password!!", Toast.LENGTH_LONG).show()
     }
 
     private fun loginAsAdmin(i: Admin, email: String, password: String) {
@@ -147,6 +172,7 @@ class LoginFragment : Fragment() {
                 val sp = MySharedPreferences(requireContext())
                 sp.saveEmail(email)
                 sp.saveUserType(Constants.CLIENT)
+
                 val intent = Intent(requireContext(), ClientsActivity::class.java)
                 startActivity(intent)
                 requireActivity().finish()
