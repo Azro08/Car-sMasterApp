@@ -43,7 +43,7 @@ class OrderDetailsFragment : Fragment() {
         val sp = MySharedPreferences(requireContext())
         val cur_user = sp.getLoggedInBy()
 
-        if (cur_user == Constants.ADMIN){
+        if (cur_user == Constants.ADMIN || cur_user == Constants.MASTER){
             binding.btnAddComment.visibility = View.VISIBLE
         }
 

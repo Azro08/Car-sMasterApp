@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/master_nav_graph"
+    app:startDestination="@id/mastersWorkFragment">
+
+    <fragment
+        android:id="@+id/mastersWorkFragment"
+        android:name="com.azrosk.tiersapp.ui.masters_ui.MastersWorkFragment"
+        android:label="fragment_masters_work"
+        tools:layout="@layout/fragment_masters_work" >
+        <action
+            android:id="@+id/nav_work_order_details"
+            app:destination="@id/orderDetailsFragment3" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderDetailsFragment3"
+        android:name="com.azrosk.tiersapp.ui.shared.orderDetails.OrderDetailsFragment"
+        android:label="fragment_order_details"
+        tools:layout="@layout/fragment_order_details" />
+</navigation>

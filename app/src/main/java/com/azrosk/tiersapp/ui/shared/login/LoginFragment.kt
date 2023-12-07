@@ -1,15 +1,19 @@
 package com.azrosk.tiersapp.ui.shared.login
 
-import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
-import android.view.*
-import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
+import android.view.View
+import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.core.view.MenuProvider
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -28,12 +32,13 @@ import com.azrosk.tiersapp.ui.shared.login.clients_viewmodel.ClientsViewModel
 import com.azrosk.tiersapp.ui.shared.signup.SignupActivity
 
 class LoginFragment : Fragment() {
-    private var _binding : FragmentLoginBinding?=null
+    private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
-    private lateinit var viewModel : AdminViewModel
-    private lateinit var clientViewModel : ClientsViewModel
+    private lateinit var viewModel: AdminViewModel
+    private lateinit var clientViewModel: ClientsViewModel
     private val spinnerOptions = arrayOf("Admin", "User", "Master")
     private val admin = Admin(email = "admin@admin.com", password = "admin")
+    private var userIsFound = 0
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -47,7 +52,11 @@ class LoginFragment : Fragment() {
         viewModel = ViewModelProvider(requireActivity())[AdminViewModel::class.java]
         clientViewModel = ViewModelProvider(requireActivity())[ClientsViewModel::class.java]
 
-        val myAdapter = ArrayAdapter(requireContext(), androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, spinnerOptions)
+        val myAdapter = ArrayAdapter(
+            requireContext(),
+            androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,
+            spinnerOptions
+        )
         binding.spinnerLoginAs.adapter = myAdapter
 
         //if default admin account doesn't exist create new one
@@ -59,7 +68,7 @@ class LoginFragment : Fragment() {
             login()
         }
 
-        binding.tvReg.setOnClickListener{
+        binding.tvReg.setOnClickListener {
             val intent = Intent(requireContext(), SignupActivity::class.java)
             startActivity(intent)
         }
@@ -74,8 +83,8 @@ class LoginFragment : Fragment() {
             }
 
             override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
-                when(menuItem.itemId){
-                    R.id.itemLoginLang ->{
+                when (menuItem.itemId) {
+                    R.id.itemLoginLang -> {
                         findNavController().navigate(R.id.nav_login_lang)
                     }
                 }
@@ -88,7 +97,7 @@ class LoginFragment : Fragment() {
         val sp = MySharedPreferences(requireContext())
         val adminExists = sp.adminExists()
 
-        if (adminExists == 0){
+        if (adminExists == 0) {
             viewModel.addAdmin(admin)
             sp.saveAdmin(1)
         }
@@ -97,12 +106,13 @@ class LoginFragment : Fragment() {
 
     private fun login() {
 
-        when{
-            TextUtils.isEmpty(binding.etLoginEmail.text.toString().trim{it <= ' '}) -> {
+        when {
+            TextUtils.isEmpty(binding.etLoginEmail.text.toString().trim { it <= ' ' }) -> {
                 binding.etLoginEmail.error = "Enter your email"
                 //                Toast.makeText(this, "Please enter email.", Toast.LENGTH_LONG).show()
             }
-            TextUtils.isEmpty(binding.etLoginPassword.text.toString().trim{it <= ' '}) -> {
+
+            TextUtils.isEmpty(binding.etLoginPassword.text.toString().trim { it <= ' ' }) -> {
                 binding.etLoginPassword.error = "Enter your password"
                 Toast.makeText(requireContext(), "Please enter password.", Toast.LENGTH_LONG).show()
             }
@@ -110,22 +120,22 @@ class LoginFragment : Fragment() {
             else -> {
                 val email = binding.etLoginEmail.text.toString()
                 val password = binding.etLoginPassword.text.toString()
-                if (binding.spinnerLoginAs.selectedItem.toString() == "Admin"){
-                    viewModel.readAllAdmins.observe(requireActivity()){
+                if (binding.spinnerLoginAs.selectedItem.toString() == "Admin") {
+                    viewModel.readAllAdmins.observe(requireActivity()) {
                         loginAsAdmin(it, email, password)
                     }
 
-                } else if (binding.spinnerLoginAs.selectedItem.toString() == "User"){
+                } else if (binding.spinnerLoginAs.selectedItem.toString() == "User") {
                     clientViewModel.readAllClients.observe(requireActivity()) {
                         loginAsClient(it, email, password)
                     }
-                } else if (binding.spinnerLoginAs.selectedItem.toString() == "Master"){
-                    viewModel.readAllMasters.observe(requireActivity()){
+                } else if (binding.spinnerLoginAs.selectedItem.toString() == "Master") {
+                    viewModel.readAllMasters.observe(requireActivity()) {
                         loginAsMaster(it, email, password)
                     }
-                }
-                else{
-                    Toast.makeText(requireContext(), "something went wrong! ", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(requireContext(), "something went wrong! ", Toast.LENGTH_SHORT)
+                        .show()
                 }
             }
 
@@ -135,9 +145,11 @@ class LoginFragment : Fragment() {
 
     private fun loginAsMaster(masterList: List<Master>?, email: String, password: String) {
         Log.d("MasterDetails", masterList.toString())
+
         for (master in masterList!!) {
             Log.d("MasterDetails", master.toString())
             if (master.email == email && master.password == password) {
+                userIsFound = 1
                 val sp = MySharedPreferences(requireContext())
                 sp.saveEmail(email)
                 sp.saveUserType(Constants.MASTER)
@@ -147,20 +159,29 @@ class LoginFragment : Fragment() {
                 requireActivity().finish()
             }
         }
-        Toast.makeText(requireContext(), "master doesn't exist or wrong password!!", Toast.LENGTH_LONG).show()
+        if (userIsFound == 0) Toast.makeText(
+            requireContext(),
+            "master doesn't exist or wrong password!!",
+            Toast.LENGTH_LONG
+        ).show()
     }
 
     private fun loginAsAdmin(i: Admin, email: String, password: String) {
         val sp = MySharedPreferences(requireContext())
-        if (i.email == email && i.password == password){
+        if (i.email == email && i.password == password) {
+            userIsFound = 1
             sp.saveEmail(email)
             sp.saveUserType(Constants.ADMIN)
             val intent = Intent(requireContext(), MainActivity::class.java)
             startActivity(intent)
             requireActivity().finish()
         } else {
-            if (sp.getEmail() == "empty"){
-                Toast.makeText(requireContext(), "admin doesn't exist or wrong password!!", Toast.LENGTH_LONG).show()
+            if (sp.getEmail() == "empty") {
+                Toast.makeText(
+                    requireContext(),
+                    "admin doesn't exist or wrong password!!",
+                    Toast.LENGTH_LONG
+                ).show()
             }
         }
 
@@ -169,6 +190,7 @@ class LoginFragment : Fragment() {
     private fun loginAsClient(list: List<Client>, email: String, password: String) {
         for (i in list) {
             if (i.email == email && i.password == password) {
+                userIsFound = 1
                 val sp = MySharedPreferences(requireContext())
                 sp.saveEmail(email)
                 sp.saveUserType(Constants.CLIENT)
@@ -178,7 +200,11 @@ class LoginFragment : Fragment() {
                 requireActivity().finish()
             }
         }
-        Toast.makeText(requireContext(), "user doesn't exist or wrong password!!", Toast.LENGTH_LONG).show()
+        if (userIsFound == 0) Toast.makeText(
+            requireContext(),
+            "client doesn't exist or wrong password!!",
+            Toast.LENGTH_LONG
+        ).show()
     }
 
 
