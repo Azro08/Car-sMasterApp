@@ -25,6 +25,7 @@
           <stringArguments>
             <stringArg name="classpath">
               <args>
+                <arg>$MODULE_DIR$/../../../app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/d6b8c7076041e2db19698ad921c991ec/transformed/viewbinding-7.2.2-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/0cd7c412577c120affd205edcffe7984/transformed/room-ktx-2.4.3-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/f0301cbe17bc2c71d2c49d1e9d5a1c4f/transformed/navigation-fragment-ktx-2.5.3-api.jar</arg>

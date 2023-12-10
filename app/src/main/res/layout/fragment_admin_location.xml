@@ -36,26 +36,29 @@
             android:textColor="@color/blue"/>
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_marginTop="20dp"
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:text="@string/address"
+        android:textSize="18sp"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/address"
-            android:textSize="18sp"/>
+    <TextView
+        android:id="@+id/tvAddressRu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textSize="18sp"
+        android:text="@string/ru_5"
+        android:textColor="@color/blue"/>
 
-        <TextView
-            android:id="@+id/tvClAddress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:textSize="18sp"
-            android:text="@string/vulica_lieanida_biady_2"
-            android:textColor="@color/blue"/>
-    </LinearLayout>
+    <TextView
+        android:id="@+id/tvAddressEn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textSize="18sp"
+        android:text="@string/en_minsk_armeyskaya_5"
+        android:textColor="@color/blue"/>
 
 </LinearLayout>

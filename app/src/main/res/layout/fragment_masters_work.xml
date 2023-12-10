@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:text="@string/works"
         android:textSize="22sp"
-        android:textColor="@color/black"
+        android:textColor="@color/blue"
         android:layout_margin="10dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
