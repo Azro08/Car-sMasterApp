@@ -1,10 +1,8 @@
-package com.azrosk.tiersapp.model
+package com.chugay.cartech.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import androidx.room.TypeConverters
-import com.azrosk.tiersapp.helper.ArrayListConverter
 
 @Entity(tableName = "products_table")
 data class Product (

@@ -1,4 +1,4 @@
-package com.azrosk.tiersapp.model
+package com.chugay.cartech.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

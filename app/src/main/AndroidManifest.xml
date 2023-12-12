@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.azrosk.tiersapp">
+    package="com.chugay.cartech">
 
     <uses-feature
         android:name="android.hardware.telephony"
@@ -21,19 +21,19 @@
         android:theme="@style/Theme.TiersApp"
         tools:targetApi="31">
         <activity
-            android:name=".ui.masters_ui.MastersActivity"
+            android:name="com.chugay.cartech.ui.masters_ui.MastersActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.clients_ui.actitvity.ClientsActivity"
+            android:name="com.chugay.cartech.ui.clients_ui.actitvity.ClientsActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.shared.signup.SignupActivity"
+            android:name="com.chugay.cartech.ui.shared.signup.SignupActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.shared.login.LoginActivity"
+            android:name="com.chugay.cartech.ui.shared.login.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.admins_ui.activities.MainActivity"
+            android:name="com.chugay.cartech.ui.admins_ui.activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

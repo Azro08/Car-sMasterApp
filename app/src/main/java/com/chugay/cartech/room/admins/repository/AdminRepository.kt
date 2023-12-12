@@ -1,8 +1,8 @@
-package com.azrosk.tiersapp.room.admins.repository
+package com.chugay.cartech.room.admins.repository
 
 import androidx.lifecycle.LiveData
-import com.azrosk.tiersapp.model.Admin
-import com.azrosk.tiersapp.room.admins.dao.AdminDao
+import com.chugay.cartech.model.Admin
+import com.chugay.cartech.room.admins.dao.AdminDao
 
 class AdminRepository (private val adminDao: AdminDao) {
 

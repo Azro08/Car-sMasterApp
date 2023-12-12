@@ -1,7 +1,7 @@
-package com.azrosk.tiersapp.model
+package com.chugay.cartech.model
 
 import androidx.room.*
-import com.azrosk.tiersapp.helper.ArrayListConverter
+import com.chugay.cartech.helper.ArrayListConverter
 import kotlin.collections.ArrayList
 
 @Entity(tableName = "masters_table")

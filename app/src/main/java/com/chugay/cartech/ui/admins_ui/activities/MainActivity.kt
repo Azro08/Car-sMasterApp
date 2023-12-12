@@ -1,23 +1,23 @@
-package com.azrosk.tiersapp.ui.admins_ui.activities
+package com.chugay.cartech.ui.admins_ui.activities
 
 import android.content.Intent
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import com.azrosk.tiersapp.helper.Constants
-import com.azrosk.tiersapp.R
-import com.azrosk.tiersapp.databinding.ActivityMainBinding
-import com.azrosk.tiersapp.sharedpref.MySharedPreferences
-import com.azrosk.tiersapp.ui.clients_ui.actitvity.ClientsActivity
-import com.azrosk.tiersapp.ui.masters_ui.MastersActivity
-import java.util.*
+import com.chugay.cartech.R
+import com.chugay.cartech.databinding.ActivityMainBinding
+import com.chugay.cartech.helper.Constants
+import com.chugay.cartech.sharedpref.MySharedPreferences
+import com.chugay.cartech.ui.clients_ui.actitvity.ClientsActivity
+import com.chugay.cartech.ui.masters_ui.MastersActivity
+import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
-    private var _binding : ActivityMainBinding?=null
+    private var _binding: ActivityMainBinding? = null
     private val binding get() = _binding!!
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,12 +36,11 @@ class MainActivity : AppCompatActivity() {
 
         sp.isFirstTimeLoad(this)
         val userType = sp.getLoggedInBy()
-        if (userType == Constants.CLIENT){
+        if (userType == Constants.CLIENT) {
             val intent = Intent(this, ClientsActivity::class.java)
             startActivity(intent)
             finish()
-        }
-        else if (userType == Constants.MASTER){
+        } else if (userType == Constants.MASTER) {
             val intent = Intent(this, MastersActivity::class.java)
             startActivity(intent)
             finish()

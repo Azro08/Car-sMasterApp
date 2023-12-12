@@ -1,4 +1,4 @@
-package com.azrosk.tiersapp.helper
+package com.chugay.cartech.helper
 
 object Constants {
     const val ORDER_ID = "order_id"

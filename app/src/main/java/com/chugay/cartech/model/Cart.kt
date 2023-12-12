@@ -1,6 +1,5 @@
-package com.azrosk.tiersapp.model
+package com.chugay.cartech.model
 
-import android.icu.text.CaseMap
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey

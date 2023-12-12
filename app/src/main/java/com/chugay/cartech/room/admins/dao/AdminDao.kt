@@ -1,8 +1,8 @@
-package com.azrosk.tiersapp.room.admins.dao
+package com.chugay.cartech.room.admins.dao
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.azrosk.tiersapp.model.Admin
+import com.chugay.cartech.model.Admin
 
 @Dao
 interface AdminDao {

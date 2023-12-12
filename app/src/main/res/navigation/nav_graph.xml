@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navHome"
-        android:name="com.azrosk.tiersapp.ui.admins_ui.fragments.home.HomeFragment"
+        android:name="com.chugay.cartech.ui.admins_ui.fragments.home.HomeFragment"
         tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/nav_add_service"
@@ -24,7 +24,7 @@
     </fragment>
     <fragment
         android:id="@+id/navOrders"
-        android:name="com.azrosk.tiersapp.ui.admins_ui.fragments.orders.OrdersFragment"
+        android:name="com.chugay.cartech.ui.admins_ui.fragments.orders.OrdersFragment"
         tools:layout="@layout/fragment_orders">
         <action
             android:id="@+id/nav_admin_order_details"
@@ -32,11 +32,11 @@
     </fragment>
     <fragment
         android:id="@+id/navAdminLocation"
-        android:name="com.azrosk.tiersapp.ui.admins_ui.fragments.location.LocationFragment"
+        android:name="com.chugay.cartech.ui.admins_ui.fragments.location.LocationFragment"
         tools:layout="@layout/fragment_admin_location" />
     <fragment
         android:id="@+id/addServiceFragment"
-        android:name="com.azrosk.tiersapp.ui.admins_ui.fragments.addService.AddServiceFragment"
+        android:name="com.chugay.cartech.ui.admins_ui.fragments.addService.AddServiceFragment"
         tools:layout="@layout/fragment_add_service">
         <action
             android:id="@+id/nav_add_home"
@@ -44,7 +44,7 @@
     </fragment>
     <fragment
         android:id="@+id/serviceDetailsFragment2"
-        android:name="com.azrosk.tiersapp.ui.shared.serviceDetails.ServiceDetailsFragment"
+        android:name="com.chugay.cartech.ui.shared.serviceDetails.ServiceDetailsFragment"
         tools:layout="@layout/fragment_service_details">
         <action
             android:id="@+id/nav_service_edit_service"
@@ -52,11 +52,11 @@
     </fragment>
     <fragment
         android:id="@+id/orderDetailsFragment"
-        android:name="com.azrosk.tiersapp.ui.shared.orderDetails.OrderDetailsFragment"
+        android:name="com.chugay.cartech.ui.shared.orderDetails.OrderDetailsFragment"
         tools:layout="@layout/fragment_order_details" />
     <fragment
         android:id="@+id/editMasterFragment"
-        android:name="com.azrosk.tiersapp.ui.admins_ui.fragments.editmaster.EditMasterFragment"
+        android:name="com.chugay.cartech.ui.admins_ui.fragments.editmaster.EditMasterFragment"
         tools:layout="@layout/fragment_edit_master">
         <action
             android:id="@+id/nav_edit_add_master"
@@ -64,11 +64,11 @@
     </fragment>
     <dialog
         android:id="@+id/addMasterDialogFragment"
-        android:name="com.azrosk.tiersapp.ui.admins_ui.fragments.addMaster.AddMasterDialogFragment"
+        android:name="com.chugay.cartech.ui.admins_ui.fragments.addMaster.AddMasterDialogFragment"
         tools:layout="@layout/fragment_add_master_dialog" />
     <fragment
         android:id="@+id/fragmentEditService"
-        android:name="com.azrosk.tiersapp.ui.admins_ui.fragments.editService.FragmentEditService"
+        android:name="com.chugay.cartech.ui.admins_ui.fragments.editService.FragmentEditService"
         tools:layout="@layout/fragment_edit_service">
         <action
             android:id="@+id/nav_edit_service_home"
@@ -76,6 +76,6 @@
     </fragment>
     <dialog
         android:id="@+id/languageDialogFragment2"
-        android:name="com.azrosk.tiersapp.ui.shared.lang.LanguageDialogFragment"
+        android:name="com.chugay.cartech.ui.shared.lang.LanguageDialogFragment"
         tools:layout="@layout/fragment_language_dialog" />
 </navigation>

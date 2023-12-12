@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.azrosk.tiersapp.ui.shared.login.LoginFragment"
+        android:name="com.chugay.cartech.ui.shared.login.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <dialog
         android:id="@+id/languageDialogFragment3"
-        android:name="com.azrosk.tiersapp.ui.shared.lang.LanguageDialogFragment"
+        android:name="com.chugay.cartech.ui.shared.lang.LanguageDialogFragment"
         android:label="fragment_language_dialog"
         tools:layout="@layout/fragment_language_dialog" />
 </navigation>
