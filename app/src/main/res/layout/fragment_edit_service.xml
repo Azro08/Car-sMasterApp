@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".ui.admins_ui.fragments.editService.FragmentEditService">
 
     <TextView
@@ -27,6 +28,14 @@
             android:orientation="vertical"
             android:layout_height="wrap_content"
             android:padding="16dp">
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:background="@drawable/auto_bgnd"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"/>
+
 
             <TextView
                 android:id="@+id/textView"
@@ -104,11 +113,11 @@
 
             <Button
                 android:id="@+id/btnEditService"
-                android:layout_width="120dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/save"
                 android:textColor="@color/white"
-                android:background="@drawable/btn_bgnd"
+                android:background="@color/green"
                 android:layout_marginTop="190dp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="20dp"/>

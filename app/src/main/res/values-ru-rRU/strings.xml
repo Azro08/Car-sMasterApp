@@ -9,6 +9,7 @@
     <string name="signup">Зарегистрировать</string>
     <string name="already_registered">AУже зарегистрирован ?</string>
     <string name="login">Логин</string>
+    <string name="location">Локация</string>
     <string name="login_as">Логин как:</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="admin_profile">Профиль администратора</string>
@@ -52,7 +53,6 @@
     <string name="recommended_masters">рекомендуемые мастера</string>
     <string name="add_to_order_list">добавить в список заказов</string>
     <string name="orders_history">история заказов</string>
-    <string name="_375_25_535_73_46">+375 25 535-73-46</string>
     <string name="address">Адрес</string>
     <string name="vulica_lieanida_biady_2">улица Леонида Беды, 2Б</string>
     <string name="clear_all">очистить все</string>
@@ -70,5 +70,7 @@
     <string name="select_a_language">Выбрать язык</string>
     <string name="ok">ok</string>
     <string name="language_already_picked">Язык уже выбран</string>
+    <string name="services">сервесы</string>
+    <string name="_375259124480">+375 (25) 912 44 80</string>
 
 </resources>

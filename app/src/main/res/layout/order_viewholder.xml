@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:textSize="16sp"
         android:layout_weight="1"
-        android:textColor="@color/blue"/>
+        android:textColor="@color/green"/>
 
     <TextView
         android:id="@+id/orderTime"

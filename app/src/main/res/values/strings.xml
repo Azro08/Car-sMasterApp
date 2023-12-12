@@ -54,7 +54,6 @@
     <string name="add_to_order_list">add to order list</string>
     <string name="orders_history">orders history</string>
     <string name="location">location</string>
-    <string name="_375_25_535_73_46">+375 25 535-73-46</string>
     <string name="address">Address</string>
     <string name="vulica_lieanida_biady_2">vulica Lieanida Biady, 2Б</string>
     <string name="clear_all">clear all</string>
@@ -78,4 +77,6 @@
     <string name="ru_5">RU - г.Минск д.Цнянка ул. Армейская 5</string>
     <string name="en_minsk_armeyskaya_5">EN - Minsk, Armeyskaya 5</string>
     <string name="login_screen">LOGIN SCREEN</string>
+    <string name="services">services</string>
+    <string name="_375259124480">+375 (25) 912 44 80</string>
 </resources>

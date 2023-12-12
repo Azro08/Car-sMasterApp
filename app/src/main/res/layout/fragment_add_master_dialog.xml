@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/white"
     android:padding="18dp"
     tools:context=".ui.admins_ui.fragments.addMaster.AddMasterDialogFragment">
 
@@ -15,6 +16,14 @@
         android:textSize="18sp"
         android:layout_gravity="center"
         android:text = "@string/add_master_DIALOG"/>
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/auto_bgnd"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"/>
+
 
     <EditText
         android:id="@+id/etAddMasterName"
