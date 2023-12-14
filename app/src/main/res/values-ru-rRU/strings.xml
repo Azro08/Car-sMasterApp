@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Автосервис</string>
+    <string name="app_name">CarTech Mechanics</string>
     <string name="email">Почта</string>
     <string name="password">Пароль</string>
     <string name="don_t_have_an_account">Нет аккаунта??</string>
