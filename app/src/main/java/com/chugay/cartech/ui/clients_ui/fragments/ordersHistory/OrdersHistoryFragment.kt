@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.chugay.cartech.R
@@ -18,6 +19,7 @@ import com.chugay.cartech.helper.Constants
 import com.chugay.cartech.model.Order
 import com.chugay.cartech.ui.clients_ui.fragments.ordersHistory.viewmodel.OrderViewModel
 import com.chugay.cartech.sharedpref.MySharedPreferences
+import kotlinx.coroutines.launch
 
 
 class OrdersHistoryFragment : Fragment() {
@@ -49,17 +51,20 @@ class OrdersHistoryFragment : Fragment() {
 
     @SuppressLint("NotifyDataSetChanged")
     private fun loadOrdersHistory(curUser: String) {
-        orderVm.readAllOrders.observe(requireActivity()){
-            for (i in it){
-                if (i.buyer == curUser){
-                    ownerList.add(i)
-                    adapter = RvOrderAdapter(ownerList){ order ->
-                        findNavController().navigate(R.id.nav_his_det, bundleOf(Pair(Constants.ORDER_ID, order.id)))
+        lifecycleScope.launch{
+            orderVm.readAllOrders.observe(requireActivity()){
+                ownerList.clear()
+                for (i in it){
+                    if (i.buyer == curUser){
+                        ownerList.add(i)
+                        adapter = RvOrderAdapter(ownerList){ order ->
+                            findNavController().navigate(R.id.nav_his_det, bundleOf(Pair(Constants.ORDER_ID, order.id)))
+                        }
+                        binding.rvOrderHistory.layoutManager = LinearLayoutManager(requireContext())
+                        binding.rvOrderHistory.setHasFixedSize(true)
+                        binding.rvOrderHistory.adapter = adapter
+                        adapter!!.notifyDataSetChanged()
                     }
-                    binding.rvOrderHistory.layoutManager = LinearLayoutManager(requireContext())
-                    binding.rvOrderHistory.setHasFixedSize(true)
-                    binding.rvOrderHistory.adapter = adapter
-                    adapter!!.notifyDataSetChanged()
                 }
             }
         }

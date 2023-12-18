@@ -8,6 +8,7 @@ import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.chugay.cartech.helper.Constants
@@ -17,6 +18,7 @@ import com.chugay.cartech.databinding.FragmentClientsHomeBinding
 import com.chugay.cartech.sharedpref.MySharedPreferences
 import com.chugay.cartech.ui.clients_ui.fragments.home.viewmodel.ClientServiceViewModel
 import com.chugay.cartech.ui.shared.login.LoginActivity
+import kotlinx.coroutines.launch
 
 
 class ClientsHomeFragment : Fragment() {
@@ -65,13 +67,15 @@ class ClientsHomeFragment : Fragment() {
     }
 
     private fun loadServices() {
-        serviceVm.readAllProducts.observe(requireActivity()){
-            adapter = RvServicesAdapter(it) { service ->
-                findNavController().navigate(R.id.nav_details_cl, bundleOf(Pair(Constants.SERVICE_ID, service.id)))
+        lifecycleScope.launch {
+            serviceVm.readAllProducts.observe(requireActivity()){
+                adapter = RvServicesAdapter(it) { service ->
+                    findNavController().navigate(R.id.nav_details_cl, bundleOf(Pair(Constants.SERVICE_ID, service.id)))
+                }
+                binding.rvServices.setHasFixedSize(true)
+                binding.rvServices.layoutManager = LinearLayoutManager(requireContext())
+                binding.rvServices.adapter = adapter
             }
-            binding.rvServices.setHasFixedSize(true)
-            binding.rvServices.layoutManager = LinearLayoutManager(requireContext())
-            binding.rvServices.adapter = adapter
         }
     }
 

@@ -1,6 +1,7 @@
 package com.chugay.cartech.ui.admins_ui.fragments.orders
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -26,7 +27,11 @@ class OrdersFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        _binding = FragmentOrdersBinding.inflate(layoutInflater)
+        try {
+            _binding = FragmentOrdersBinding.inflate(layoutInflater)
+        } catch (e:Exception){
+            Log.d("error", e.message.toString())
+        }
         return binding.root
     }
 

@@ -7,7 +7,7 @@ import com.chugay.cartech.model.Master
 @Dao
 interface MastersDao {
 
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun addMaster(master: Master)
 
     @Update

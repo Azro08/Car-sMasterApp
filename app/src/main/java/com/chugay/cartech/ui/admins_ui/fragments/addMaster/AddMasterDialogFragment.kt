@@ -6,14 +6,16 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import com.chugay.cartech.databinding.FragmentAddMasterDialogBinding
 import com.chugay.cartech.model.Master
 import com.chugay.cartech.ui.admins_ui.fragments.addMaster.viewmodel.AddMasterViewModel
+import kotlinx.coroutines.launch
 
 class AddMasterDialogFragment : DialogFragment() {
-    private var _binding : FragmentAddMasterDialogBinding ?= null
+    private var _binding: FragmentAddMasterDialogBinding? = null
     private val binding get() = _binding!!
-    lateinit var mastersVm : AddMasterViewModel
+    lateinit var mastersVm: AddMasterViewModel
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         _binding = FragmentAddMasterDialogBinding.inflate(layoutInflater)
         val builder = AlertDialog.Builder(this.activity)
@@ -36,14 +38,20 @@ class AddMasterDialogFragment : DialogFragment() {
                 binding.etAddMasterPassword.error = "Password cannot be empty"
             } else {
                 val fullName = "$name $surName"
-                mastersVm.readAllMasters.observe(this) { mastersList ->
-                    val exists = mastersList.any { it.name == fullName }
-                    if (exists) {
-                        Toast.makeText(requireContext(), "Master already exists!", Toast.LENGTH_SHORT).show()
-                    } else {
-                        val master = Master(name = fullName, email = email, password = password)
-                        mastersVm.addMaster(master)
-                        dismiss()
+                lifecycleScope.launch {
+                    mastersVm.readAllMasters.observe(this@AddMasterDialogFragment) { mastersList ->
+                        val exists = mastersList.any { it.name == fullName }
+                        if (exists) {
+                            Toast.makeText(
+                                requireContext(),
+                                "Master already exists!",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        } else {
+                            val master = Master(name = fullName, email = email, password = password)
+                            mastersVm.addMaster(master)
+                            Toast.makeText(requireContext(), "Created", Toast.LENGTH_SHORT).show()
+                        }
                     }
                 }
             }

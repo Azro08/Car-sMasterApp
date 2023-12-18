@@ -10,11 +10,13 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import com.chugay.cartech.databinding.FragmentEditServiceBinding
 import com.chugay.cartech.helper.Constants
 import com.chugay.cartech.model.Product
 import com.chugay.cartech.ui.admins_ui.activities.MainActivity
 import com.chugay.cartech.ui.admins_ui.fragments.editService.viewmodel.EditServiceViewModel
+import kotlinx.coroutines.launch
 
 class FragmentEditService : Fragment() {
     private var _binding : FragmentEditServiceBinding?=null
@@ -35,10 +37,12 @@ class FragmentEditService : Fragment() {
         val serviceId = arguments?.getInt(Constants.ET_SERVICE_ID)
 
         if (serviceId != null){
-            serviceVm.readAllProducts.observe(requireActivity()){
-                for (i in it){
-                    if (serviceId == i.id) loadDetails(i)
-                }
+            lifecycleScope.launch {
+                serviceVm.readAllProducts.observe(requireActivity()){
+                    for (i in it){
+                        if (serviceId == i.id) loadDetails(i)
+                    }
+               }
             }
         } else{
             binding.editContainer.visibility = View.GONE

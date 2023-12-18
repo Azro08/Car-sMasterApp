@@ -9,6 +9,7 @@ import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.chugay.cartech.R
@@ -20,6 +21,7 @@ import com.chugay.cartech.ui.clients_ui.fragments.myOrders.viewmodel.CartViewMod
 import com.chugay.cartech.ui.clients_ui.fragments.ordersHistory.viewmodel.OrderViewModel
 import com.chugay.cartech.sharedpref.MySharedPreferences
 import com.chugay.cartech.ui.clients_ui.actitvity.ClientsActivity
+import kotlinx.coroutines.launch
 
 class ClientsMyOrdersFragment : Fragment() {
     private var _binding : FragmentClientsMyOrdersBinding?=null
@@ -47,21 +49,22 @@ class ClientsMyOrdersFragment : Fragment() {
     }
 
     private fun loadMyOrders(curUser: String) {
-        ownerList.clear()
-        cartVm.readCartItems.observe(requireActivity()){ cartItems ->
-            for (i in cartItems){
-                if (i.user == curUser){
-                    ownerList.add(0, i)
-                    adapter = RvCartAdapter(ownerList) { myCart ->
-                        goToOrder(myCart)
+        lifecycleScope.launch{
+            ownerList.clear()
+            cartVm.readCartItems.observe(requireActivity()){ cartItems ->
+                for (i in cartItems){
+                    if (i.user == curUser){
+                        ownerList.add(0, i)
+                        adapter = RvCartAdapter(ownerList) { myCart ->
+                            goToOrder(myCart)
+                        }
+                        binding.rvMyOrder.setHasFixedSize(true)
+                        binding.rvMyOrder.layoutManager = LinearLayoutManager(requireContext())
+                        binding.rvMyOrder.adapter = adapter
                     }
-                    binding.rvMyOrder.setHasFixedSize(true)
-                    binding.rvMyOrder.layoutManager = LinearLayoutManager(requireContext())
-                    binding.rvMyOrder.adapter = adapter
                 }
             }
         }
-
     }
 
     private fun setMenu() {
