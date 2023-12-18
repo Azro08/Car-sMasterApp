@@ -188,6 +188,7 @@ class ClOrderServiceFragment : Fragment() {
                     Toast.makeText(requireContext(), "Order Finished", Toast.LENGTH_SHORT).show()
                     val intent = Intent(requireContext(), ClientsActivity::class.java)
                     startActivity(intent)
+
                     requireActivity().finish()
                 }
             }
